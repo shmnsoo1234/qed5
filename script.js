@@ -71,7 +71,7 @@ function playNumberWordle() {
 
     const validation = validateGuess(input);
     if (!validation.ok) {
-      console.log('❌잘못된 입력:', validation.reason);
+      console.log('잘못된 입력:', validation.reason);
       continue;
     }
 
@@ -80,14 +80,14 @@ function playNumberWordle() {
     const matched = evaluateGuess(secret, guessArr);
 
     if (matched === 5) {
-      console.log(`✅정답! (시도횟수:${attempts})`);
+      console.log(`정답입니다 (시도횟수:${attempts})`);
       return;
     } else {
       console.log(` ${matched}개 숫자가 정답에 포함되어 있습니다. (${maxAttempts - attempts}번 남음)`);
     }
   }
 
-  console.log(` 실패! 정답은 ${secret.join('')} 이었습니다.`);
+  console.log(` 실패 (정답: ${secret.join('')})`);
 }
 
 // 브라우저 콘솔에서 실행할 때:
